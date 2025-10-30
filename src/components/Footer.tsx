@@ -1,27 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { FaTiktok, FaInstagram, FaYoutube, FaXTwitter } from "react-icons/fa6";
 
 export default function Footer() {
   const pathname = usePathname();
+  const router = useRouter();
   const year = new Date().toLocaleString("en-US", {
     timeZone: "America/New_York",
     year: "numeric",
   });
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    // If it's the same page, scroll to top
+    e.preventDefault();
+    
+    // If it's the same page, just scroll to top
     if (pathname === href) {
-      e.preventDefault();
-      try {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } catch {
-        window.scrollTo(0, 0);
-      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      // Navigate to different page - router will trigger ScrollToTop component
+      router.push(href);
     }
-    // Otherwise, let the link navigate normally and ScrollToTop component will handle it
   };
 
   return (
