@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import DisableScrollRestoration from "@/components/DisableScrollRestoration";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="light">
       <body className={`${plusJakarta.variable} font-display antialiased bg-background-light text-[#111827]`}>
+        <DisableScrollRestoration />
         <Suspense fallback={null}>
           <ScrollToTop />
         </Suspense>
