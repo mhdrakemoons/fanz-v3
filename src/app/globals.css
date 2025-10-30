@@ -41,7 +41,12 @@ body {
   text-wrap: balance;
 }
 
-/* Smooth anchor scrolling for TOC */
+/* Smooth anchor scrolling for TOC - but not during page navigation */
 html {
   scroll-behavior: smooth;
+}
+
+/* Disable smooth scroll during navigation to force instant scroll to top */
+html.navigating {
+  scroll-behavior: auto !important;
 }
