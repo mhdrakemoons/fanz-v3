@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "WebFetch(domain:www.twilio.com)",
+      "WebFetch(domain:www.monday.com)",
+      "WebFetch(domain:www.supabase.com)",
+      "WebFetch(domain:www.render.com)",
+      "Bash(npm run build:*)",
+      "mcp__ide__getDiagnostics",
+      "WebSearch",
+      "Bash(node diagnose-identity-system.js:*)",
+      "Bash(node analyze-schema.js:*)",
+      "Bash(node verify-migration.js:*)",
+      "Bash(node:*)",
+      "mcp__supabase__list_tables",
+      "mcp__supabase__apply_migration",
+      "mcp__supabase__execute_sql",
+      "mcp__supabase__list_projects",
+      "mcp__supabase__list_migrations",
+      "Bash(npx ts-node:*)",
+      "Bash(cat:*)",
+      "Bash(timeout 30 npx ts-node:*)",
+      "Bash(psql \"$SUPABASE_DB_URL:-postgresql://postgres.ylwjvxkdtfngwrkwrtva:Kayla2015!!@aws-0-us-west-1.pooler.supabase.com:6543/postgres\" -c \"\\d call_participants\")",
+      "Bash(find:*)",
+      "Bash(timeout 30 npx tsc:*)",
+      "Bash(echo:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
