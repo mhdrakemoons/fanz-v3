@@ -60,30 +60,30 @@ export default function Footer() {
               </div>
             </div>
             {/* Navigation Links - Desktop: Centered */}
-            <nav className="flex flex-wrap items-center gap-0.5 md:gap-1.5 rounded-full border border-gray-200 bg-white/80 p-1.5 backdrop-blur-sm shadow-sm md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
+            <nav className="flex flex-wrap items-center gap-0.5 md:gap-1.5 rounded-full border border-gray-200 bg-white/80 p-1 md:p-1.5 backdrop-blur-sm shadow-sm md:absolute md:left-1/2 md:transform md:-translate-x-1/2">
               <Link 
-                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" 
+                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-2 md:px-4 py-1.5 rounded-full" 
                 href="/"
                 onClick={(e) => handleNavClick(e, "/")}
               >
                 Home
               </Link>
               <Link 
-                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" 
+                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-2 md:px-4 py-1.5 rounded-full" 
                 href="/blog"
                 onClick={(e) => handleNavClick(e, "/blog")}
               >
                 Blog
               </Link>
               <Link 
-                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" 
+                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-2 md:px-4 py-1.5 rounded-full" 
                 href="/reviews"
                 onClick={(e) => handleNavClick(e, "/reviews")}
               >
                 Reviews
               </Link>
               <Link 
-                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" 
+                className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-2 md:px-4 py-1.5 rounded-full" 
                 href="/best-strategies"
                 onClick={(e) => handleNavClick(e, "/best-strategies")}
               >
