@@ -4,6 +4,7 @@ import EditorsChoice from "./EditorsChoice";
 import BestStrategies from "./BestStrategies";
 import ReviewsShowcase from "./ReviewsShowcase";
 import BlogMini from "./BlogMini";
+import CTA from "./CTA";
 
 export default function Homepage() {
   return (
@@ -15,6 +16,9 @@ export default function Homepage() {
         <BestStrategies />
         <ReviewsShowcase />
         <BlogMini />
+      </div>
+      <div className="w-full max-w-[87.5rem] mx-auto px-4 sm:px-6 lg:px-8 pb-10">
+        <CTA />
       </div>
     </div>
   );
