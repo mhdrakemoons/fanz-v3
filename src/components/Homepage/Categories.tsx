@@ -45,12 +45,12 @@ export default function Categories() {
         <h2 className="text-[#111827] text-3xl md:text-4xl font-extrabold tracking-tight">Browse by Social Platform</h2>
 				<p className="text-gray-600 mt-2">Find proven strategies for your favorite platform</p>
       </div>
-			<div className="grid w-full grid-flow-col auto-cols-[180px] gap-4 overflow-x-auto pb-1 justify-start lg:overflow-visible lg:grid-flow-row lg:grid-cols-5 lg:gap-6 lg:justify-between">
+			<div className="grid w-full grid-cols-2 gap-4 pb-1 lg:grid-cols-5 lg:gap-6 lg:justify-between">
 				{categories.map((c) => (
 					<a
 						key={c.name}
 						href={`/best-strategies/${categoryToSlug(c.name)}`}
-						className="group w-[180px] lg:w-full h-[144px] flex flex-col items-center justify-center text-center gap-2 rounded-xl border border-gray-200 bg-white/80 px-4 py-4 backdrop-blur-sm shadow-sm hover:shadow-md transform hover:scale-[1.02] transition-all"
+						className="group w-full h-[144px] flex flex-col items-center justify-center text-center gap-2 rounded-xl border border-gray-200 bg-white/80 px-4 py-4 backdrop-blur-sm shadow-sm hover:shadow-md transform hover:scale-[1.02] transition-all"
 					>
 						<span className="inline-flex items-center justify-center h-12 w-12 rounded-full bg-white text-sky-400 shadow ring-1 ring-black/5">
 							<IconFor name={c.name} />
