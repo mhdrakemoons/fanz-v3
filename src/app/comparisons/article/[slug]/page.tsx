@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<PageParams>
   const strategy = await getStrategyBySlug(slug);
   if (!strategy) return {};
   return {
-    title: `${strategy.title} — Fanzsocial Strategies`,
+    title: `${strategy.title} — Fanzsocial Comparisons`,
     description: strategy.excerpt,
     openGraph: {
       title: strategy.title,

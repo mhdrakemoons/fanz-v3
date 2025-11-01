@@ -67,7 +67,7 @@ The homepage (`src/app/page.tsx` → `src/components/Homepage/index.tsx`) is com
 - `EditorsChoice` - Featured article (marked with `editorChoice: true` in frontmatter)
 - `LatestUpdates` - Recent blog posts
 - `ReviewsShowcase` - Featured reviews
-- `BestStrategies` - Strategy articles
+- `BestStrategies` - Comparison articles
 - `BlogMini` - Additional blog content
 
 Static content cards are defined in `src/lib/content.ts` as `CARD_DATA` array.
@@ -79,8 +79,8 @@ Static content cards are defined in `src/lib/content.ts` as `CARD_DATA` array.
 - `/blog/[slug]` - Individual blog post
 - `/reviews` - Reviews listing
 - `/reviews/[slug]` - Individual review
-- `/best-strategies` - Strategies listing
-- `/best-strategies/[slug]` - Individual strategy
+- `/comparisons` - Comparisons listing
+- `/comparisons/[slug]` - Individual comparison
 
 ### Global Layout
 

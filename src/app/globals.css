@@ -50,3 +50,62 @@ html {
 html.navigating {
   scroll-behavior: auto !important;
 }
+
+/* Enhanced typography for article content */
+.prose {
+  --tw-prose-body: theme('colors.gray.700');
+  --tw-prose-headings: theme('colors.gray.900');
+  --tw-prose-lead: theme('colors.gray.600');
+  --tw-prose-links: theme('colors.primary');
+  --tw-prose-bold: theme('colors.gray.900');
+  --tw-prose-counters: theme('colors.gray.500');
+  --tw-prose-bullets: theme('colors.primary');
+  --tw-prose-hr: theme('colors.gray.200');
+  --tw-prose-quotes: theme('colors.gray.900');
+  --tw-prose-quote-borders: theme('colors.primary');
+  --tw-prose-captions: theme('colors.gray.600');
+  --tw-prose-code: theme('colors.gray.900');
+  --tw-prose-pre-code: theme('colors.gray.100');
+  --tw-prose-pre-bg: theme('colors.gray.900');
+  --tw-prose-th-borders: theme('colors.gray.300');
+  --tw-prose-td-borders: theme('colors.gray.200');
+}
+
+/* First paragraph and drop cap styling */
+.prose > p:first-child {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: theme('colors.gray.800');
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .prose > p:first-child {
+    font-size: 1.5rem;
+  }
+}
+
+.prose > p:first-child::first-letter {
+  float: left;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  margin-top: 0.125rem;
+  color: theme('colors.primary');
+  font-family: var(--font-display);
+}
+
+/* Ordered list counter styling */
+.ol-counter {
+  counter-reset: item;
+}
+
+.ol-counter-item {
+  counter-increment: item;
+}
+
+.ol-counter-number::before {
+  content: counter(item) ".";
+}

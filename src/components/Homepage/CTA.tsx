@@ -32,10 +32,10 @@ export default function CTA() {
             </Link>
 
             <Link 
-              href="/best-strategies" 
+              href="/comparisons" 
               className="inline-flex h-12 items-center justify-center rounded-md border border-white/40 backdrop-blur-sm px-8 text-sm font-medium text-white shadow transition-all hover:bg-white/10 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
             >
-              Discover Best Strategies
+              Discover Comparisons
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-2">
                 <path d="M5 12h14"></path>
                 <path d="m12 5 7 7-7 7"></path>

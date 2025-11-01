@@ -1,14 +1,14 @@
 import SectionTwo from '@/components/SectionTwo'
 import { getStrategiesByCategory, getStrategyMetasByCategory } from '@/lib/strategies'
-import { FaYoutube } from "react-icons/fa6";
+import { FaReddit } from "react-icons/fa6";
 
 export const metadata = {
-  title: "YouTube Strategies That Work | Fanzsocial",
-  description: "Discover proven strategies to grow your YouTube presence, boost engagement, and reach your goals.",
+  title: "Top 10 Platforms for Reddit | Fanzsocial",
+  description: "Compare the best platforms for Reddit marketing, growth, and engagement. Find the right tools for your needs.",
 };
 
-export default function YouTubePage() {
-  const category = "YouTube";
+export default function RedditPage() {
+  const category = "Reddit";
   const metas = getStrategyMetasByCategory(category);
 
   const sectionCards = metas.map((m, idx) => ({
@@ -24,14 +24,14 @@ export default function YouTubePage() {
 
   const sectionArticles = metas.map((m, idx) => ({
     id: idx + 1,
-    kicker: (m.kicker || m.badge || 'Strategy').toUpperCase(),
+    kicker: (m.kicker || (m.badge === 'Strategy' ? 'Comparison' : m.badge) || 'Comparison').toUpperCase(),
     title: m.title,
     description: [m.excerpt, (m.takeaways && m.takeaways[0]) || '']
       .filter(Boolean)
       .join(' '),
     takeaways: m.takeaways ?? [m.excerpt ?? ''],
     slug: m.slug,
-    imageCaption: m.badge || 'Featured strategy',
+    imageCaption: m.badge || 'Featured comparison',
   }));
 
   const estDate = new Date().toLocaleString('en-US', {
@@ -45,8 +45,8 @@ export default function YouTubePage() {
     <div className="min-h-screen">
       <div className="w-full max-w-[87.5rem] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-5">
         <main className="flex flex-col gap-12 md:gap-16">
-          {/* Custom Hero Section for YouTube */}
-          <section id="youtube-hero" className="relative bg-white pb-6 md:pb-10">
+          {/* Custom Hero Section for Reddit */}
+          <section id="reddit-hero" className="relative bg-white pb-6 md:pb-10">
             <div className="absolute inset-0 z-0 overflow-hidden">
               <div
                 className="absolute left-1/2 top-0 -translate-x-1/2 w-[900px] h-[900px] md:w-[1100px] md:h-[1100px] opacity-25"
@@ -57,23 +57,23 @@ export default function YouTubePage() {
               <div className="z-10 flex flex-col items-center gap-3">
                 {/* Platform Icon */}
                 <div className="inline-flex items-center justify-center h-16 w-16 rounded-full bg-white text-sky-400 shadow-lg ring-1 ring-black/5 mb-2">
-                  <FaYoutube className="h-10 w-10" />
+                  <FaReddit className="h-10 w-10" />
                 </div>
 
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-500 mb-1">
                   <a href="/" className="hover:text-primary transition-colors">Home</a>
                   <span aria-hidden>›</span>
-                  <a href="/best-strategies" className="hover:text-primary transition-colors">Best Strategies</a>
+                  <a href="/comparisons" className="hover:text-primary transition-colors">Comparisons</a>
                   <span aria-hidden>›</span>
-                  <span className="text-gray-600">YouTube</span>
+                  <span className="text-gray-600">Reddit</span>
                 </div>
 
                 <h1 className="text-[#111827] text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tighter max-w-4xl text-balance">
-                  YouTube Strategies
-                  <span className="block">That Work</span>
+                  Top 10 Platforms
+                  <span className="block">for Reddit</span>
                 </h1>
                 <h2 className="text-gray-600 text-lg font-normal leading-normal max-w-2xl text-balance">
-                  Discover proven strategies to grow your YouTube presence, boost engagement, and reach your goals.
+                  Compare the best platforms for Reddit marketing, growth, and engagement. Find the right tools for your needs.
                 </h2>
 
                 {/* Review/Update Badges */}
@@ -111,7 +111,7 @@ export default function YouTubePage() {
               <div className="relative z-10 mt-2 md:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {sectionCards.map((card) => (
-                    <a key={card.id} className="group flex flex-col h-full rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all" href={`/best-strategies/article/${card.slug}`}>
+                    <a key={card.id} className="group flex flex-col h-full rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all" href={`/comparisons/article/${card.slug}`}>
                       <div className="relative">
                         <div className="bg-cover bg-center" style={{ backgroundImage: `url(${card.image})`, height: 200 }} />
                         {card.badge ? (
@@ -124,7 +124,7 @@ export default function YouTubePage() {
                       </div>
                       <div className="px-4 py-3 border-t border-gray-100 bg-sky-50 group-hover:bg-sky-100 transition-colors">
                         <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                          Read strategy <span aria-hidden>{">"}</span>
+                          Read comparison <span aria-hidden>{">"}</span>
                         </span>
                       </div>
                     </a>
@@ -136,10 +136,10 @@ export default function YouTubePage() {
 
           {/* Section 2: Details + TOC */}
           {metas.length > 0 ? (
-            <SectionTwo articles={sectionArticles as any} cardData={sectionCards as any} hrefBase="/best-strategies/article" />
+            <SectionTwo articles={sectionArticles as any} cardData={sectionCards as any} hrefBase="/comparisons/article" />
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-600 text-lg">No strategies found for YouTube yet. Check back soon!</p>
+              <p className="text-gray-600 text-lg">No comparisons found for Reddit yet. Check back soon!</p>
             </div>
           )}
         </main>

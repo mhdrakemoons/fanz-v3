@@ -2,7 +2,7 @@ import SectionOne from '@/components/SectionOne'
 import SectionTwo from '@/components/SectionTwo'
 import { getLatestStrategies, getAllStrategyMeta } from '@/lib/strategies'
 
-export default async function BestStrategiesPage() {
+export default async function ComparisonsPage() {
   const latest = getLatestStrategies(12);
   const homeCards = latest.map((p, idx) => ({
     id: idx + 1,
@@ -28,7 +28,7 @@ export default async function BestStrategiesPage() {
   }));
   const sectionArticles = metas.map((m, idx) => ({
     id: idx + 1,
-    kicker: (m.kicker || m.badge || 'Insight').toUpperCase(),
+    kicker: (m.kicker || (m.badge === 'Strategy' ? 'Comparison' : m.badge) || 'Comparison').toUpperCase(),
     title: m.title,
     description: [m.excerpt, (m.takeaways && m.takeaways[0]) || '']
       .filter(Boolean)
@@ -52,10 +52,10 @@ export default async function BestStrategiesPage() {
           {/* Breadcrumb moved into hero (SectionOne) */}
 
           {/* Section 1: Title + 12 Posts */}
-          <SectionOne cardData={homeCards} hrefBase="/best-strategies/article" />
+          <SectionOne cardData={homeCards} hrefBase="/comparisons/article" />
 
           {/* Section 2: Details + TOC */}
-          <SectionTwo articles={sectionArticles as any} cardData={sectionCards as any} hrefBase="/best-strategies/article" />
+          <SectionTwo articles={sectionArticles as any} cardData={sectionCards as any} hrefBase="/comparisons/article" />
         </main>
       </div>
     </div>

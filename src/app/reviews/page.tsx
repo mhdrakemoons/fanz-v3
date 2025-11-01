@@ -34,7 +34,7 @@ export default function ReviewsPage() {
     <div className="min-h-screen">
       <div className="w-full max-w-[87.5rem] mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-5">
         <main>
-      {/* Top header band (match /best-strategies hero) */}
+      {/* Top header band (match /comparisons hero) */}
       <section className="relative bg-white pb-6 md:pb-10">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div

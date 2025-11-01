@@ -40,7 +40,7 @@ export default function Navbar() {
         </Link>
         <nav className="hidden md:flex flex-1 justify-end">
           <div className="flex items-center gap-1.5 rounded-full border border-gray-200 bg-white/80 p-1.5 backdrop-blur-sm shadow-sm">
-            <Link className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" href="/best-strategies">Best Strategies</Link>
+            <Link className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" href="/comparisons">Comparisons</Link>
             <Link className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" href="/reviews">Reviews</Link>
             <Link className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-1.5 rounded-full" href="/blog">Blog</Link>
           </div>
@@ -88,11 +88,11 @@ export default function Navbar() {
               <nav className="flex-1 p-4">
                 <div className="flex flex-col gap-2">
                   <Link
-                    href="/best-strategies"
+                    href="/comparisons"
                     onClick={closeMenu}
                     className="text-slate-800 text-base font-medium leading-normal hover:bg-gray-100 transition-colors px-4 py-3 rounded-lg"
                   >
-                    Best Strategies
+                    Comparisons
                   </Link>
                   <Link
                     href="/reviews"

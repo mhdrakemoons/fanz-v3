@@ -10,10 +10,10 @@ type HomeCard = {
 
 type SectionOneProps = {
   cardData: HomeCard[];
-  hrefBase?: string; // default "/best-strategies"
+  hrefBase?: string; // default "/comparisons"
 };
 
-export default function SectionOne({ cardData, hrefBase = "/best-strategies" }: SectionOneProps) {
+export default function SectionOne({ cardData, hrefBase = "/comparisons" }: SectionOneProps) {
   return (
     <section id="section-1" className="relative bg-white pb-6 md:pb-10">
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -27,13 +27,13 @@ export default function SectionOne({ cardData, hrefBase = "/best-strategies" }: 
           <div className="flex items-center justify-center gap-2 text-sm text-gray-500 mb-1">
             <a href="/" className="hover:text-primary transition-colors">Home</a>
             <span aria-hidden>›</span>
-            <span className="text-gray-600">Best Strategies</span>
+            <span className="text-gray-600">Comparisons</span>
           </div>
           <h1 className="text-[#111827] text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tighter max-w-4xl text-balance">
             Go Viral. Build a Brand.
           </h1>
           <h2 className="text-gray-600 text-lg font-normal leading-normal max-w-2xl text-balance">
-            Discover actionable strategies to grow your audience, boost engagement, and achieve your goals on every platform.
+            Compare the best platforms to find the right tools for your needs and achieve your goals on every platform.
           </h2>
           {/* Meta pills moved here per request */}
           <MetaPills />
@@ -55,7 +55,7 @@ export default function SectionOne({ cardData, hrefBase = "/best-strategies" }: 
               </div>
               <div className="px-4 py-3 border-t border-gray-100 bg-sky-50 group-hover:bg-sky-100 transition-colors">
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Read strategy <span aria-hidden>{">"}</span>
+                  Read comparison <span aria-hidden>{">"}</span>
                 </span>
               </div>
             </a>

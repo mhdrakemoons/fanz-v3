@@ -7,10 +7,10 @@ import { Article, Card } from "@/lib/content";
 type SectionTwoProps = {
   articles: (Article & { slug?: string; imageCaption?: string })[];
   cardData: (Card & { slug?: string })[];
-  hrefBase?: string; // default "/best-strategies"
+  hrefBase?: string; // default "/comparisons"
 };
 
-export default function SectionTwo({ articles, cardData, hrefBase = "/best-strategies" }: SectionTwoProps) {
+export default function SectionTwo({ articles, cardData, hrefBase = "/comparisons" }: SectionTwoProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   const ids = useMemo(() => articles.map((a) => `post-${a.id}`), [articles]);

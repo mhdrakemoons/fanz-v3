@@ -26,19 +26,19 @@ export default function BestStrategies() {
     <section className="mt-12">
       <div className="flex items-end justify-between mb-6">
         <div>
-          <span className="block text-sm md:text-base font-semibold tracking-widest uppercase text-primary">Best Strategies</span>
+          <span className="block text-sm md:text-base font-semibold tracking-widest uppercase text-primary">Comparisons</span>
           <h2 className="text-[#111827] text-3xl md:text-4xl font-extrabold tracking-tight">Proven Playbooks by Platform</h2>
           <p className="text-gray-600 mt-1">Our hand-picked tactics that consistently perform.</p>
         </div>
-        <Link href="/best-strategies" className="inline-flex items-center gap-1 text-sm md:text-base font-medium text-primary hover:underline">
-          See all strategies <span aria-hidden>{">"}</span>
+        <Link href="/comparisons" className="inline-flex items-center gap-1 text-sm md:text-base font-medium text-primary hover:underline">
+          See all comparisons <span aria-hidden>{">"}</span>
         </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {strategies.map((s) => {
           const platforms = getPlatformsFromTags(metaBySlug.get(s.slug)?.tags);
           return (
-            <Link key={s.slug} href={`/best-strategies/article/${s.slug}`} className="group relative flex flex-col h-full rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
+            <Link key={s.slug} href={`/comparisons/article/${s.slug}`} className="group relative flex flex-col h-full rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all">
               {s.image ? (
                 <div className="bg-cover bg-center" style={{ backgroundImage: `url(${s.image})`, height: 160 }} />
               ) : (
@@ -60,7 +60,7 @@ export default function BestStrategies() {
               </div>
               <div className="px-5 py-3 border-t border-gray-100 bg-sky-50 group-hover:bg-sky-100 transition-colors">
                 <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                  Read strategy <span aria-hidden>{">"}</span>
+                  Read comparison <span aria-hidden>{">"}</span>
                 </span>
               </div>
             </Link>

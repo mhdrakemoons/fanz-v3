@@ -3,8 +3,8 @@ import { getStrategiesByCategory, getStrategyMetasByCategory } from '@/lib/strat
 import { FaTiktok } from "react-icons/fa6";
 
 export const metadata = {
-  title: "TikTok Strategies That Work | Fanzsocial",
-  description: "Discover proven strategies to grow your TikTok presence, boost engagement, and reach your goals.",
+  title: "Top 10 Platforms for TikTok | Fanzsocial",
+  description: "Compare the best platforms for TikTok marketing, growth, and engagement. Find the right tools for your needs.",
 };
 
 export default function TikTokPage() {
@@ -24,14 +24,14 @@ export default function TikTokPage() {
 
   const sectionArticles = metas.map((m, idx) => ({
     id: idx + 1,
-    kicker: (m.kicker || m.badge || 'Strategy').toUpperCase(),
+    kicker: (m.kicker || (m.badge === 'Strategy' ? 'Comparison' : m.badge) || 'Comparison').toUpperCase(),
     title: m.title,
     description: [m.excerpt, (m.takeaways && m.takeaways[0]) || '']
       .filter(Boolean)
       .join(' '),
     takeaways: m.takeaways ?? [m.excerpt ?? ''],
     slug: m.slug,
-    imageCaption: m.badge || 'Featured strategy',
+    imageCaption: m.badge || 'Featured comparison',
   }));
 
   const estDate = new Date().toLocaleString('en-US', {
@@ -63,17 +63,17 @@ export default function TikTokPage() {
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-500 mb-1">
                   <a href="/" className="hover:text-primary transition-colors">Home</a>
                   <span aria-hidden>›</span>
-                  <a href="/best-strategies" className="hover:text-primary transition-colors">Best Strategies</a>
+                  <a href="/comparisons" className="hover:text-primary transition-colors">Comparisons</a>
                   <span aria-hidden>›</span>
                   <span className="text-gray-600">TikTok</span>
                 </div>
 
                 <h1 className="text-[#111827] text-5xl sm:text-6xl md:text-7xl font-black leading-tight tracking-tighter max-w-4xl text-balance">
-                  TikTok Strategies
-                  <span className="block">That Work</span>
+                  Top 10 Platforms
+                  <span className="block">for TikTok</span>
                 </h1>
                 <h2 className="text-gray-600 text-lg font-normal leading-normal max-w-2xl text-balance">
-                  Discover proven strategies to grow your TikTok presence, boost engagement, and reach your goals.
+                  Compare the best platforms for TikTok marketing, growth, and engagement. Find the right tools for your needs.
                 </h2>
 
                 {/* Review/Update Badges */}
@@ -111,7 +111,7 @@ export default function TikTokPage() {
               <div className="relative z-10 mt-2 md:mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {sectionCards.map((card) => (
-                    <a key={card.id} className="group flex flex-col h-full rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all" href={`/best-strategies/article/${card.slug}`}>
+                    <a key={card.id} className="group flex flex-col h-full rounded-xl border border-gray-100 bg-white overflow-hidden shadow-sm hover:shadow-md transition-all" href={`/comparisons/article/${card.slug}`}>
                       <div className="relative">
                         <div className="bg-cover bg-center" style={{ backgroundImage: `url(${card.image})`, height: 200 }} />
                         {card.badge ? (
@@ -124,7 +124,7 @@ export default function TikTokPage() {
                       </div>
                       <div className="px-4 py-3 border-t border-gray-100 bg-sky-50 group-hover:bg-sky-100 transition-colors">
                         <span className="inline-flex items-center gap-1 text-sm font-medium text-primary">
-                          Read strategy <span aria-hidden>{">"}</span>
+                          Read comparison <span aria-hidden>{">"}</span>
                         </span>
                       </div>
                     </a>
@@ -136,10 +136,10 @@ export default function TikTokPage() {
 
           {/* Section 2: Details + TOC */}
           {metas.length > 0 ? (
-            <SectionTwo articles={sectionArticles as any} cardData={sectionCards as any} hrefBase="/best-strategies/article" />
+            <SectionTwo articles={sectionArticles as any} cardData={sectionCards as any} hrefBase="/comparisons/article" />
           ) : (
             <div className="text-center py-16">
-              <p className="text-gray-600 text-lg">No strategies found for TikTok yet. Check back soon!</p>
+              <p className="text-gray-600 text-lg">No comparisons found for TikTok yet. Check back soon!</p>
             </div>
           )}
         </main>

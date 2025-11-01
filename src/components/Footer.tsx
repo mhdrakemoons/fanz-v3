@@ -84,10 +84,10 @@ export default function Footer() {
               </Link>
               <Link 
                 className="text-slate-800 text-sm font-medium leading-normal hover:bg-gray-100 transition-colors px-2 md:px-4 py-1.5 rounded-full" 
-                href="/best-strategies"
-                onClick={(e) => handleNavClick(e, "/best-strategies")}
+                href="/comparisons"
+                onClick={(e) => handleNavClick(e, "/comparisons")}
               >
-                Best Strategies
+                Comparisons
               </Link>
             </nav>
             {/* Social Icons - Desktop: Right side */}
