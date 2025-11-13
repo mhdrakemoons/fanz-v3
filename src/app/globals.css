@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/container-queries";
+
+/* Design tokens */
+html {
+  color-scheme: light;
+  font-size: 90%;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+/* Tailwind v4 theme tokens used by utility classes like bg-primary, font-display */
+@theme inline {
+  /* colors */
+  --color-primary: #138aec;
+  --color-background-light: #f6f7f8;
+  --color-background-dark: #0A0F14;
+  --color-dark-card: #101a22;
+
+  /* map foreground/background to defaults used by template */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* fonts */
+  --font-display: var(--font-plus-jakarta), "Noto Sans", sans-serif;
+}
+
+/* Base typography and colors */
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Utility: balance headline wrapping */
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth anchor scrolling for TOC - but not during page navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Disable smooth scroll during navigation to force instant scroll to top */
+html.navigating {
+  scroll-behavior: auto !important;
+}
+
+/* Enhanced typography for article content */
+.prose {
+  --tw-prose-body: theme('colors.gray.700');
+  --tw-prose-headings: theme('colors.gray.900');
+  --tw-prose-lead: theme('colors.gray.600');
+  --tw-prose-links: theme('colors.primary');
+  --tw-prose-bold: theme('colors.gray.900');
+  --tw-prose-counters: theme('colors.gray.500');
+  --tw-prose-bullets: theme('colors.primary');
+  --tw-prose-hr: theme('colors.gray.200');
+  --tw-prose-quotes: theme('colors.gray.900');
+  --tw-prose-quote-borders: theme('colors.primary');
+  --tw-prose-captions: theme('colors.gray.600');
+  --tw-prose-code: theme('colors.gray.900');
+  --tw-prose-pre-code: theme('colors.gray.100');
+  --tw-prose-pre-bg: theme('colors.gray.900');
+  --tw-prose-th-borders: theme('colors.gray.300');
+  --tw-prose-td-borders: theme('colors.gray.200');
+}
+
+/* First paragraph and drop cap styling */
+.prose > p:first-child {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: theme('colors.gray.800');
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  .prose > p:first-child {
+    font-size: 1.5rem;
+  }
+}
+
+.prose > p:first-child::first-letter {
+  float: left;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 900;
+  margin-right: 0.5rem;
+  margin-top: 0.125rem;
+  color: theme('colors.primary');
+  font-family: var(--font-display);
+}
+
+/* Ordered list counter styling */
+.ol-counter {
+  counter-reset: item;
+}
+
+.ol-counter-item {
+  counter-increment: item;
+}
+
+.ol-counter-number::before {
+  content: counter(item) ".";
+}
+
+/* Custom scrollbar for TOC - always visible blue scrollbar */
+.scrollbar-thin {
+  /* Force scrollbar to always show on macOS - use scroll instead of auto */
+  overflow-y: scroll !important;
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: theme('colors.primary') rgba(59, 130, 246, 0.15);
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px;
+  /* Force scrollbar to always be visible on macOS */
+  -webkit-appearance: none;
+  display: block !important;
+  /* Force rendering even when not scrolling */
+  background-color: rgba(59, 130, 246, 0.15);
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: rgba(59, 130, 246, 0.15);
+  border-radius: 4px;
+  /* Ensure track is always visible */
+  -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: theme('colors.primary');
+  border-radius: 4px;
+  /* Make thumb more visible */
+  min-height: 30px;
+  /* Force thumb to show even when at top */
+  opacity: 1;
+  -webkit-box-shadow: none;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: theme('colors.blue.600');
+}
+
+/* Force scrollbar to always show on macOS Safari - make track always visible */
+@supports (-webkit-appearance: none) {
+  .scrollbar-thin {
+    scrollbar-gutter: stable;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+    background-color: rgba(59, 130, 246, 0.15);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar:vertical {
+    width: 8px;
+    background-color: rgba(59, 130, 246, 0.15);
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-radius: 4px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: theme('colors.primary');
+    border-radius: 4px;
+    border: none;
+    opacity: 1;
+  }
+}
